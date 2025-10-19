@@ -19,6 +19,18 @@ A stunning Chrome & Firefox extension featuring a beautiful glassmorphism floati
 
 ## 🚀 Installation
 
+### Prerequisites
+
+Before installing the extension, you need to build the distribution packages:
+
+1. **Clone or download this repository**
+2. **Run the build script** to create the dist folder:
+   ```bash
+   chmod +x build.sh
+   ./build.sh
+   ```
+   This will create the `dist/chrome/` and `dist/firefox/` folders with the built extension packages.
+
 ### Chrome / Edge / Brave
 
 #### From Chrome Web Store (Coming Soon)
@@ -31,7 +43,7 @@ A stunning Chrome & Firefox extension featuring a beautiful glassmorphism floati
 2. Open Chrome/Edge and navigate to `chrome://extensions/` or `edge://extensions/`
 3. Enable "Developer mode" in the top-right corner
 4. Click "Load unpacked"
-5. Select the extension folder
+5. Select the `dist/chrome/` folder from the repository
 6. The extension is now installed and ready to use!
 
 ### Firefox
@@ -45,7 +57,7 @@ A stunning Chrome & Firefox extension featuring a beautiful glassmorphism floati
 1. Download or clone this repository
 2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
 3. Click "Load Temporary Add-on..."
-4. Navigate to the extension folder and select the `manifest.json` file
+4. Navigate to the `dist/firefox/` folder and select the `manifest.json` file
 5. The extension is now installed temporarily (will be removed when Firefox restarts)
 
 ## 📖 How to Use
@@ -90,11 +102,25 @@ The extension works on:
 ```
 linkedin-job-insights/
 ├── manifest.json                                    # Extension configuration (Cross-browser)
+├── manifest-firefox.json                           # Firefox-specific manifest
 ├── content.js                                      # Main functionality script
 ├── background.js                                   # Background service worker
 ├── styles.css                                      # Glassmorphism styling
-├── Screenshot 2025-10-18 at 6.40.00 PM.png       # Extension preview
-├── icons/                                          # Extension icons
+├── build.sh                                        # Build script for creating dist folder
+├── dist/                                           # Built extension packages
+│   ├── chrome/                                     # Chrome/Edge extension package
+│   │   ├── manifest.json
+│   │   ├── content.js
+│   │   ├── background.js
+│   │   ├── styles.css
+│   │   └── icons/
+│   └── firefox/                                    # Firefox extension package
+│       ├── manifest.json
+│       ├── content.js
+│       ├── background.js
+│       ├── styles.css
+│       └── icons/
+├── icons/                                          # Source extension icons
 │   ├── icon16.png                                 # 16x16 icon
 │   ├── icon48.png                                 # 48x48 icon
 │   └── icon128.png                                # 128x128 icon

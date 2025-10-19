@@ -11,5 +11,8 @@ Thumbs.db
 *.crx
 *.xpi
 
+# Built extension packages
+dist/
+
 # Logs
 *.log
