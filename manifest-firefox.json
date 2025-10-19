@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "LinkedIn Job Insights",
+  "version": "1.0",
+  "description": "Real-time LinkedIn job statistics with glassmorphism UI",
+  "author": "Hemal Joshi",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/*", "https://*.linkedin.com/jobs/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "LinkedIn Job Insights"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icon.png", "close.png", "refresh.png"],
+      "matches": ["https://www.linkedin.com/*"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "linkedin-job-insights@hemaljoshi.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}

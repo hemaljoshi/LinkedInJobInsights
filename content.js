@@ -1,6 +1,9 @@
 (() => {
   "use strict";
 
+  // Cross-browser compatibility - Support both Chrome and Firefox
+  const browserAPI = (typeof browser !== 'undefined') ? browser : chrome;
+
   // Constants
   const DEBUG = false;
   const ANIMATION_DURATION = 300;
@@ -55,6 +58,11 @@
 
   const clearCache = () => cache.elements.clear();
 
+  // Cross-browser resource URL helper
+  function getResourceURL(path) {
+    return browserAPI.runtime.getURL(path);
+  }
+
   // Position management
   function getSmartPosition(savedPosition) {
     const { innerWidth: vw, innerHeight: vh } = window;
@@ -89,7 +97,7 @@
     button = document.createElement('button');
     button.id = SELECTORS.toggle;
     button.className = 'floating-stats-toggle';
-    button.innerHTML = `<img src="${chrome.runtime.getURL('icon.png')}" class="toggle-icon" alt="Stats"><span class="toggle-text">Stats</span>`;
+    button.innerHTML = `<img src="${getResourceURL('icon.png')}" class="toggle-icon" alt="Stats"><span class="toggle-text">Stats</span>`;
     button.setAttribute('aria-label', 'Toggle job statistics');
 
     button.onclick = () => {
@@ -126,7 +134,7 @@
       display: 'none'
     });
 
-    const urls = ['icon.png', 'refresh.png', 'close.png'].map(f => chrome.runtime.getURL(f));
+    const urls = ['icon.png', 'refresh.png', 'close.png'].map(f => getResourceURL(f));
     container.innerHTML = `
       <div class="stats-card">
         <div class="stats-card-header" id="${SELECTORS.dragHandle}">

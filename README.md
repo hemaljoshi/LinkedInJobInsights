@@ -1,6 +1,6 @@
 # 💎 LinkedIn Job Insights
 
-A stunning Chrome extension featuring a beautiful glassmorphism floating card that displays real-time LinkedIn job statistics with elegant transparency and blur effects.
+A stunning Chrome & Firefox extension featuring a beautiful glassmorphism floating card that displays real-time LinkedIn job statistics with elegant transparency and blur effects.
 
 ![Extension Preview](screenshot.png)
 
@@ -15,21 +15,38 @@ A stunning Chrome extension featuring a beautiful glassmorphism floating card th
 - **⚡ Instant Access**: Floating toggle button for quick show/hide functionality
 - **🎭 Visual Feedback**: Smooth animations and loading states for better UX
 - **♿ Accessibility**: Supports reduced motion and high contrast preferences
+- **🌐 Cross-Browser**: Works seamlessly on Chrome, Firefox, Edge, and other Chromium-based browsers
 
 ## 🚀 Installation
 
-### From Chrome Web Store (Coming Soon)
+### Chrome / Edge / Brave
+
+#### From Chrome Web Store (Coming Soon)
 1. Visit the [Chrome Web Store](#) (link will be available after publishing)
-2. Click "Add to Chrome"
+2. Click "Add to Chrome/Edge"
 3. Confirm by clicking "Add extension"
 
-### Manual Installation (Developer Mode)
+#### Manual Installation (Developer Mode)
 1. Download or clone this repository
-2. Open Chrome and navigate to `chrome://extensions/`
+2. Open Chrome/Edge and navigate to `chrome://extensions/` or `edge://extensions/`
 3. Enable "Developer mode" in the top-right corner
 4. Click "Load unpacked"
 5. Select the extension folder
 6. The extension is now installed and ready to use!
+
+### Firefox
+
+#### From Firefox Add-ons (Coming Soon)
+1. Visit [Firefox Add-ons](#) (link will be available after publishing)
+2. Click "Add to Firefox"
+3. Confirm by clicking "Add"
+
+#### Manual Installation (Temporary)
+1. Download or clone this repository
+2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
+3. Click "Load Temporary Add-on..."
+4. Navigate to the extension folder and select the `manifest.json` file
+5. The extension is now installed temporarily (will be removed when Firefox restarts)
 
 ## 📖 How to Use
 
@@ -52,18 +69,19 @@ The extension works on:
 ### Built With
 - **Pure Vanilla JavaScript** (zero dependencies)
 - **Modern CSS Glassmorphism** with backdrop-filter and transparency
-- **Chrome Extension Manifest V3** for enhanced security
+- **WebExtensions API** for cross-browser compatibility
+- **Manifest V3** for enhanced security
 - **LinkedIn Voyager API** for real-time data fetching
 - **Responsive Design** with mobile-first approach
 
 ### Browser Compatibility
-- Chrome 88+
-- Microsoft Edge 88+
-- Brave Browser
+- **Chrome** 88+
+- **Firefox** 109+
+- **Microsoft Edge** 88+
+- **Brave Browser**
 - Any Chromium-based browser
 
 ### Permissions Required
-- `activeTab`: To access the current LinkedIn job page
 - `storage`: To save your preferred card position
 - Host permission for `*.linkedin.com`: To fetch job statistics
 
@@ -71,8 +89,9 @@ The extension works on:
 
 ```
 linkedin-job-insights/
-├── manifest.json                                    # Extension configuration
+├── manifest.json                                    # Extension configuration (Cross-browser)
 ├── content.js                                      # Main functionality script
+├── background.js                                   # Background service worker
 ├── styles.css                                      # Glassmorphism styling
 ├── Screenshot 2025-10-18 at 6.40.00 PM.png       # Extension preview
 ├── icons/                                          # Extension icons
@@ -124,10 +143,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - ⌨️ **Keyboard Support**: ESC key to close
 - 🔄 **Refresh Animation**: Smooth loading states and visual feedback
 - 💾 **Position Memory**: Remembers your preferred location
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 Author
 
