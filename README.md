@@ -2,7 +2,7 @@
 
 A stunning Chrome & Firefox extension featuring a beautiful glassmorphism floating card that displays real-time LinkedIn job statistics with elegant transparency and blur effects.
 
-![Extension Preview](screenshot.png)
+![Extension Preview](https://github.com/hemaljoshi/LinkedInJobInsights/blob/main/screenshot.png)
 
 ## ✨ Features
 
